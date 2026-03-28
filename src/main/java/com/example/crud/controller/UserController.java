@@ -14,7 +14,8 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
+    
+	private final UserService userService;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -27,6 +28,11 @@ public class UserController {
     public String get() {
     	String  name=environment.getProperty("app.name");
     	return name;
+    }
+    
+    @GetMapping("/get")
+    public String test() {
+    	return "testing";
     }
 
     @GetMapping("/get")
